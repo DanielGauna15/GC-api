@@ -21,8 +21,6 @@ const getUser = async (req, res) => {
       if (playerData.nick === "") {
         res.status(404).json({message: "Player not found"}) 
       } else  {
-        // Agregar el encabezado "Access-Control-Allow-Origin: *"
-        res.header("Access-Control-Allow-Origin", "*");
         res.status(200).json(playerData)
       }
     } catch (e) {
