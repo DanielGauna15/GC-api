@@ -24,7 +24,8 @@ const getUser = async (req, res) => {
         res.status(200).json(playerData)
       }
     } catch (e) {
-      res.status(404).json({message: "Input is not id"})
+  console.error(e);  // Log the actual error to the console
+  res.status(404).json({ message: "Input is not id" });
     }
 }
 
