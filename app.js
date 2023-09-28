@@ -12,7 +12,7 @@ const userRoute = require('./Routes/user.route')
 
 //Middlewares
 const corsOptions = {};
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
