@@ -11,7 +11,7 @@ const app = express();
 const userRoute = require('./Routes/user.route.js')
 
 //Middlewares
-const corsOptions = {};
+const corsOptions = { origin: "https://gc-api-dev.fl0.io/api/getUser/" };
 app.use(cors(corsOptions));
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({extended: false}));
