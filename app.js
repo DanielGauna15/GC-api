@@ -11,8 +11,11 @@ const app = express();
 const userRoute = require('./Routes/user.route.js')
 
 //Middlewares
-const corsOptions = { origin: "https://gc-api-dev.fl0.io/api/getUser/" };
-app.use(cors(corsOptions));
+const corsOptions = {};
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*']),
+    res.append('Access-Control-Allow-Metods', 'GET,PUT,POST,DELETE')
+});
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -23,6 +26,5 @@ app.use('/api', userRoute)
 //Mont Server
 const port = process.env.PORT || 3000;
 app.listen(port, '0.0.0.0', () => {
-    console.log(`Server is running on: http://localhost:${port}`)
+    console.log(`Server is running on: http://localhost:${port}/api/getUser`)
 })
-
