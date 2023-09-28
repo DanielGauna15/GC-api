@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 //Call Routes
-const userRoute = require('./Routes/user.route')
+const userRoute = require('./Routes/user.route.js')
 
 //Middlewares
 const corsOptions = {};
