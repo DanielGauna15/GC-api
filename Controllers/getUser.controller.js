@@ -6,9 +6,9 @@ const getUser = async (req, res) => {
       const response = await fetch(
         `https://gamersclub.com.br/api/box/init/${idReq}`
       );
-      //if (!response.ok) {
-        //throw new Error("No se pudo obtener los datos del jugador");
-      //}
+      if (!response.ok) {
+        throw new Error("No se pudo obtener los datos del jugador");
+      }
 
       const data = await response.json();
       const playerData = {
