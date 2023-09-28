@@ -12,7 +12,7 @@ const userRoute = require('./Routes/user.route.js')
 
 //Middlewares
 const corsOptions = {};
-app.use(cors(corsOptions);
+app.use(cors(corsOptions));
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -24,4 +24,4 @@ app.use('/api', userRoute)
 const port = process.env.PORT || 3000;
 app.listen(port, '0.0.0.0', () => {
     console.log(`Server is running on: http://localhost:${port}/api/getUser`)
-})
+});
